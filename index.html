@@ -8,9 +8,21 @@
 <link href = "style.css" rel = "stylesheet">
 
 <body>
-     <div class = "main-container">
-           <h3> Guess the Number  - </h3>
+     <div class = "main-container" style = 'text-align:center'>
+           <span> Guess the Number  - </span>
+           <div>
+               <label for = "guess"> Enter the guess between 0 to 100 </label>
+               <br>
+              <input type = "number"
+               id = "guess" 
+               placeholder = "Enter a Number...." 
+               value = "" min = "0"  max = "100" 
+              />
+           </div>
+            <button id = "submitbtn">  Submit      </button>
+            <button id = "resetagain">  Restart Game  </button>
          </div>
+           <h4 id = "showmsg">  </h4>
      </div>
 <script src = "index.js"/>
 </body>
