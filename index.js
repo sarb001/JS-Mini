@@ -29,6 +29,8 @@ function submitfunction(){
 function resetfunction(){
     showmsg.innerText = '';
     guessnumber.value = "";
+    resetagain.disabled = true;
+    submitbtn.disabled = false;
 }
 
 submitbtn.addEventListener('click'  , submitfunction);
