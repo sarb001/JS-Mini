@@ -1,6 +1,9 @@
-.main-container{
-    background-color: rgb(155, 155, 155);
-    font-size: 25px;
-    padding:1%;
-    text-align: center;
+
+.lightmode{
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+.darkmode{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
