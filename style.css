@@ -1,0 +1,18 @@
+#container{
+    text-align: center;
+}
+.showtext{
+    display: flex;
+    justify-content: center;
+}
+#dialogtext{
+    width: 35%;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 3%;
+    display: none;
+}
+
+#dialogtext.open{
+    display: block;
+}
