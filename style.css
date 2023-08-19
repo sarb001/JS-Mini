@@ -12,7 +12,6 @@
     padding: 3%;
     display: none;
 }
-
 #dialogtext.open{
     display: block;
 }
