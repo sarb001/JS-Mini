@@ -1,11 +1,3 @@
 .container{
     text-align: center;
 }
-.lightmode{
-    background-color: rgb(255, 0, 0);
-    color: #050405;
-}
-.darkmode{
-    background-color: #000000;
-    color: rgb(255, 0, 0);
-}
