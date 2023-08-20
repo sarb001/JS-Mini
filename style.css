@@ -1,0 +1,13 @@
+
+#progressbar{
+    width: 10%;
+    background-color:red;
+    height: 2vh;
+}
+.progfunction{
+    width: 100%;
+    background-color: rgb(217, 206, 206);
+}
+#download{
+    margin: 2%;
+}
