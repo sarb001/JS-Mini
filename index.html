@@ -37,26 +37,28 @@
                 </div>
 
                 <div style = 'padding: 1%'>
-                    <label id = "message"> </label>
-                    <input id = "message" type = "" value = ""  placeholder = "Enter Message Here.." />
+                    <label for = "message"> </label>
+                    <input id  = "message" type = "text" placeholder="Message..."
+                     value = "This is  toast..." />
                 </div>
                 <div style = 'padding: 1%'>
                     <label for  = "range"> Duration </label>
-                    <input type = "range" value = "5" min ="1" max = "10" id = "range" > </progress>
+                    <input type = "range" value = "5" min ="1" max = "10" id = "range" >
                 </div>
                 <button  type = "button" id = "showtoast"> Show Toast </button>
             </form>
 
-            <div id = "showleft">     </div>
-            <div id = "showright">    </div>
-            <div id = "showtop">      </div>
-            <div id = "showbottom">   </div>
+            <div id = "showleftTop">      </div>
+            <div id = "showrightTop">     </div>
+            <div id = "showleftBottom">      </div>
+            <div id = "showrightbottom">   </div>
 
-                <div id ="toast-container">
-                       <span id = "toastmessage">  </span>
-                       <button type = "button" id = "closetoast"> Close  </button>
-                </div>
-
+                <template id = "toastmessagebox">
+                     <div class = "toast">
+                            <span class = "toastmessage">  </span>
+                            <button type = "button" class="remove"> Close  </button>
+                     </div>
+                </template>
             </div>
 
 <script src = "index.js"/>
