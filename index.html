@@ -9,22 +9,55 @@
 
 <body>
         <div id = "container">
-            <div class="dialog-container" style = "text-align: center">
-                <button id = "dialogbox"> Show Dialog </button>
-            </div>
-        <div class="showtext">
-            
-            <p id = "dialogtext"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                 Dolor accusamus error aperiam voluptatum quam voluptates 
-                 qui quasi dignissimos hic, impedit consequatur enim odio 
-                 magnam eum assumenda alias ab illo unde? Nobis, quidem blanditiis 
-                 libero dolorem rerum est. Incidunt architecto iste officiis 
-                id ipsam eius distinctio, reiciendis quidem dicta omnis iure.
-                <br>
-                <button id = "close"> Close Box </button>
-             </p>
+            <h2> Toast Popup  </h2>
         </div>
-    </div>
+         <div class = "toast-container">
+            <form id = "form">
+                <div style     = 'padding: 1%'>  
+                    <select id = "horizontal-position"> 
+                        <option value = "left">  Left </option>
+                        <option value = "right"> Right </option>
+                    </select>
+                </div>
+
+                <div style = 'padding: 1%'> 
+                    <select id = "vertical-position"> 
+                        <option value = "top"> Top </option>
+                        <option value = "bottom"> Bottom </option>
+                    </select>
+                </div>
+
+                <div style = 'padding: 1%'>
+                    <select id = "type"> 
+                        <option value = "warning"> Warning </option>
+                        <option value = "success"> Success </option>
+                        <option value = "info">  Info   </option>
+                        <option value = "error"> Error   </option>
+                    </select>
+                </div>
+
+                <div style = 'padding: 1%'>
+                    <label id = "message"> </label>
+                    <input id = "message" type = "" value = ""  placeholder = "Enter Message Here.." />
+                </div>
+                <div style = 'padding: 1%'>
+                    <label for  = "range"> Duration </label>
+                    <input type = "range" value = "5" min ="1" max = "10" id = "range" > </progress>
+                </div>
+                <button  type = "button" id = "showtoast"> Show Toast </button>
+            </form>
+
+            <div id = "showleft">     </div>
+            <div id = "showright">    </div>
+            <div id = "showtop">      </div>
+            <div id = "showbottom">   </div>
+
+                <div id ="toast-container">
+                       <span id = "toastmessage">  </span>
+                       <button type = "button" id = "closetoast"> Close  </button>
+                </div>
+
+            </div>
 
 <script src = "index.js"/>
 </body>
