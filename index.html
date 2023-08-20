@@ -5,63 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-    <link href = "style.css" rel = "stylesheet">    
-
 <body>
-        <div id = "container">
-            <h2> Toast Popup  </h2>
-        </div>
-         <div class = "toast-container">
-            <form id = "form">
-                <div style     = 'padding: 1%'>  
-                    <select id = "horizontal-position"> 
-                        <option value = "left">  Left </option>
-                        <option value = "right"> Right </option>
-                    </select>
-                </div>
-
-                <div style = 'padding: 1%'> 
-                    <select id = "vertical-position"> 
-                        <option value = "top"> Top </option>
-                        <option value = "bottom"> Bottom </option>
-                    </select>
-                </div>
-
-                <div style = 'padding: 1%'>
-                    <select id = "type"> 
-                        <option value = "warning"> Warning </option>
-                        <option value = "success"> Success </option>
-                        <option value = "info">  Info   </option>
-                        <option value = "error"> Error   </option>
-                    </select>
-                </div>
-
-                <div style = 'padding: 1%'>
-                    <label for = "message"> </label>
-                    <input id  = "message" type = "text" placeholder="Message..."
-                     value = "This is  toast..." />
-                </div>
-                <div style = 'padding: 1%'>
-                    <label for  = "range"> Duration </label>
-                    <input type = "range" value = "5" min ="1" max = "10" id = "range" >
-                </div>
-                <button  type = "button" id = "showtoast"> Show Toast </button>
-            </form>
-
-            <div id = "showleftTop">      </div>
-            <div id = "showrightTop">     </div>
-            <div id = "showleftBottom">      </div>
-            <div id = "showrightbottom">   </div>
-
-                <template id = "toastmessagebox">
-                     <div class = "toast">
-                            <span class = "toastmessage">  </span>
-                            <button type = "button" class="remove"> Close  </button>
-                     </div>
-                </template>
-            </div>
-
-<script src = "index.js"/>
+      <div class="container">
+          <h3> Password Strength </h3>
+      </div>
 </body>
-
 </html>
