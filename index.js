@@ -1,120 +1,22 @@
 
+const Applybtn = document.getElementById('apply');
+const InputNumber = document.getElementById('number');
 
-const Progress = document.getElementById('progressbar');                      // 50%
-const Progresscontainer = document.getElementsByClassName('progfunction');      // 100%
+const ProgressBar = document.getElementById('progressbar');
 
-const Progresscontroller = document.getElementById('progress-controller');      // 100%
+function Applybar(){
+     let  width = 0;
 
-const Start    = document.getElementById('start');
-const Stop     = document.getElementById('stop');
-const Reset    = document.getElementById('reset');
+      const inputValue = InputNumber.value;         // get input value 
 
-Stop.disabled = true;
-Progresscontroller.addEventListener('click',controller);
-
-let  isInProgress = false;
-var width = 0;
-let reqAnimationId;
-
-
-function controller(e){
-    const id = e.target.id;
-
-    if(id === 'start' && !isInProgress){
-        onstart();
-    }else if(id === 'stop' && isInProgress){
-        onstop();
-    }else if(id === 'reset'){
-        onstop();
-        setProgressWidth(0);
-    }
+         if(inputValue >= 0 && inputValue <= 100){
+            ProgressBar.style.width = inputValue + '%';
+            console.log('Width increment ');
+        }else{
+            alert(' Enter  Number between 0 and 100 ');
+            console.log('Invalid Data');
+            inputValue(' ');
+        }
 }
 
-function onstart(){
-    isInProgress = true;
-    startprogress();
-    Start.disabled = true;
-    Stop.disabled = false;
-}
-
-function onstop(){
-    Start.disabled = false;
-    stoprogress();
-    Stop.disabled = true;
-    isInProgress = false;
-}
-
-
-function startprogress(){
-    let progressPercent = 0.1 + getProgressWidth();     // get progress
-
-    if(progressPercent <= 100){
-         setProgressWidth(progressPercent);
-         reqAnimationId = requestAnimationFrame(startprogress);     // Loop with Rpeat itself 
-    }
-}
-// getting width to use in some function 
-function getProgressWidth(){
-    return +Progress.style.width.split('%')[0];
-}
-
-function setProgressWidth(progressPercent){
-    Progress.style.width = progressPercent + '%';
-}
-
-function stoprogress(){
-    cancelAnimationFrame(reqAnimationId);
-}
-
-
-
-
-
-
-
-
-
-
-// function movebar(){
-//     Stop.disabled = false;
-//     var identity  = setInterval(incresewidth,100);
-//     function incresewidth(){
-//         if(width >= 100){
-//             clearInterval(identity);
-//         }else{
-//             width = width + 1;                                 // width + percentage increment 
-//             ProgressBar.style.width =  width + '%';
-//         }
-//     }
-// }
-
-// function resetbar(){
-//      width = 0;   
-//      ProgressBar.style.width =  width + '%';
-//      Start.disabled = false;
-//      Stop.disabled  = false;
-// }
-
-// function stopbar(){
-//     Start.disabled = true;
-// }
-
-// function beforestart(){
-//     Stop.disabled = true;
-// }
-
-// beforestart();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Applybtn.addEventListener('click',Applybar);
