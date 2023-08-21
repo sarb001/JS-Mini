@@ -1,7 +1,7 @@
 
 #progressbar{
     width: 0%;
-    background-color:red;
+    background-color:rgb(68, 255, 0);
     height: 2vh;
 }
 .progfunction{
@@ -12,5 +12,11 @@
     margin: 2%;
 }
 .range{
-    width: 50%
+    width: 50%;
+    text-align: center
 ;}
+#buttons{
+    display: flex;
+    justify-content:space-between;
+    padding: 3%;
+}

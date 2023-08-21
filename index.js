@@ -1,38 +1,110 @@
 
 
-const ProgressBar = document.getElementById('progressbar');                // 50%
-const Progresscontainer = document.getElementsByClassName('progfunction'); // 100%
+const Progress = document.getElementById('progressbar');                      // 50%
+const Progresscontainer = document.getElementsByClassName('progfunction');      // 100%
 
-const Download = document.getElementById('download');
-const ShowText = document.getElementById('showtext');
+const Progresscontroller = document.getElementById('progress-controller');      // 100%
+
+const Start    = document.getElementById('start');
+const Stop     = document.getElementById('stop');
+const Reset    = document.getElementById('reset');
+
+Stop.disabled = true;
+Progresscontroller.addEventListener('click',controller);
+
+let  isInProgress = false;
+var width = 0;
+let reqAnimationId;
 
 
-function movebar(){
-    var width = 0;
-    var identity = setInterval(incresewidth,1000);
-    function incresewidth(){
-        if(width >= 100){
-            clearInterval(identity);
-        }else{
-            width = width + 20;                 // width + percentage increment 
-            ProgressBar.style.width =  width + '%';
+function controller(e){
+    const id = e.target.id;
 
-            ShowText.innerText = width * 1 + '%';
-
-            if(width >= 40 && width < 60){
-                ProgressBar.style.backgroundColor =  'green'
-            }else if(width >= 60 && width < 80){
-                ProgressBar.style.backgroundColor =  'orange';
-            }
-             else if(width >= 20 && width < 40){
-                ProgressBar.style.backgroundColor =  'blue';
-            }
-        }
+    if(id === 'start' && !isInProgress){
+        onstart();
+    }else if(id === 'stop' && isInProgress){
+        onstop();
+    }else if(id === 'reset'){
+        onstop();
+        setProgressWidth(0);
     }
 }
 
-Download.addEventListener('click',movebar);
-// increase bar on single Click 
+function onstart(){
+    isInProgress = true;
+    startprogress();
+    Start.disabled = true;
+    Stop.disabled = false;
+}
+
+function onstop(){
+    Start.disabled = false;
+    stoprogress();
+    Stop.disabled = true;
+    isInProgress = false;
+}
+
+
+function startprogress(){
+    let progressPercent = 0.1 + getProgressWidth();     // get progress
+
+    if(progressPercent <= 100){
+         setProgressWidth(progressPercent);
+         reqAnimationId = requestAnimationFrame(startprogress);     // Loop with Rpeat itself 
+    }
+}
+// getting width to use in some function 
+function getProgressWidth(){
+    return +Progress.style.width.split('%')[0];
+}
+
+function setProgressWidth(progressPercent){
+    Progress.style.width = progressPercent + '%';
+}
+
+function stoprogress(){
+    cancelAnimationFrame(reqAnimationId);
+}
+
+
+
+
+
+
+
+
+
+
+// function movebar(){
+//     Stop.disabled = false;
+//     var identity  = setInterval(incresewidth,100);
+//     function incresewidth(){
+//         if(width >= 100){
+//             clearInterval(identity);
+//         }else{
+//             width = width + 1;                                 // width + percentage increment 
+//             ProgressBar.style.width =  width + '%';
+//         }
+//     }
+// }
+
+// function resetbar(){
+//      width = 0;   
+//      ProgressBar.style.width =  width + '%';
+//      Start.disabled = false;
+//      Stop.disabled  = false;
+// }
+
+// function stopbar(){
+//     Start.disabled = true;
+// }
+
+// function beforestart(){
+//     Stop.disabled = true;
+// }
+
+// beforestart();
+
 
 
 
