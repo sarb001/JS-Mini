@@ -13,8 +13,17 @@ function movebar(){
         }else{
             width = width + 20;                 // width + percentage increment 
             ProgressBar.style.width =  width + '%';
+
+            if(width >= 40 && width < 60){
+                ProgressBar.style.backgroundColor =  'green'
+            }else if(width >= 60 && width < 80){
+                ProgressBar.style.backgroundColor =  'orange';
+            }
+             else if(width >= 20 && width < 40){
+                ProgressBar.style.backgroundColor =  'blue';
+            }
         }
-        console.log('increase --');
+        console.log('increase herrr  --');
     }
 }
 
