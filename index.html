@@ -10,7 +10,24 @@
 
 <body>
             <div class = "password-container">
-                    <h3>  Password Strength  </h3>
+                   <div class="password-title">
+                       <h3>  Password Strength  </h3>
+                   </div>
+                    <input  type = "text"  placeholder = "Enter the password"
+                        min = "8"
+                        max = "32"
+                        id = 'textpassword'
+                        value =""
+                    />
+                    <div id = "controller">
+                        <span id = "lc">  Lowercase </span>
+                        <span id = "uc">  Uppercase </span>
+                        <span id = "num"> Number </span>
+                        <span id = "sym"> Symbols </span>
+                    </div>
+                    <div>  <div id = "progressbar">  </div>  </div>
+                    <div> Password has <strong id = "chars"> 0 </strong>  chars </div>
+                    <div> Your password is  <strong  id = "strength"> Weak </strong>  </div>
             </div>
     <script src = "index.js"> </script>
 
