@@ -14,49 +14,80 @@ let Inputpassword  = document.getElementById('textpassword');
 
 // console.log('WordsController -', WordsController.style.color = 'grey');
 
-function changeinput(e){
-        let password = Inputpassword.value;
-        console.log('password Data -',password);
+// function changeinput(e){
+//         let password = Inputpassword.value;
+//         console.log('password Data -',password);
 
-        const PasswordLength  = getPasswordlength(password);
+//         const PasswordLength  = getPasswordlength(password);
+//         console.log('PasswordLength -',PasswordLength);
 
-        const RegexpLength    = getExpressionLength(password);
-        console.log('Regexp -',RegexpLength);
-}
+//         const RegexpLength    = getExpressionLength(password);
+//         console.log('Regexp -',RegexpLength);
 
-function getPasswordlength(text){
-        let score = 0;
-        score = text.length;
-        console.log('score -',score);   
-        return score;
+//         const strength = getPasswordStrenth(RegexpLength);
+
+
+// }
+
+// function getPasswordlength(text){
+//         let score = 0;
+//         score = text.length;
+//         return score;
+//     }
+
+// function getExpressionLength(text){
+//             let scorebool = 0;
+//             let width = 0;
+    
+//         return scorebool;
+// }
+
+// let hasnumber = /\d/;
+// let hasuc     = /[A-Z]/;
+// let haslc     = /[a-z]/;
+// let hasSym    = /[^A-Za-z0-9]/;
+
+
+// Inputpassword.addEventListener('input',changeinput);
+
+function checkPasswordStrength() {
+
+    const passwordInput = document.getElementById('passwordInput').value;
+    const passwordStrength = document.getElementById('passwordStrength');
+    const passwordLength = document.getElementById('passwordLength');
+    const progressBar = document.getElementById('progress');
+
+    const lowerCaseRegex = /[a-z]/;
+    const upperCaseRegex = /[A-Z]/;
+    const numberRegex = /[0-9]/;
+    const symbolRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/\-="']/;
+
+    let strengthClass = 'strength-weak';
+
+    if (passwordInput.length <= 23) {
+        passwordLength.textContent = `Length: ${passwordInput.length}`;
+        progressBar.style.width = `${(passwordInput.length / 20) * 100}%`;
+
+        if (lowerCaseRegex.test(passwordInput) && upperCaseRegex.test(passwordInput) && numberRegex.test(passwordInput) && symbolRegex.test(passwordInput)) 
+        {
+            strengthClass = 'strength-strong';
+
+        } else if ((lowerCaseRegex.test(passwordInput) || upperCaseRegex.test(passwordInput)) && (numberRegex.test(passwordInput) && symbolRegex.test(passwordInput))) 
+        {
+            strengthClass = 'strength-medium';
+
+        } else if (lowerCaseRegex.test(passwordInput) || upperCaseRegex.test(passwordInput) || numberRegex.test(passwordInput) || symbolRegex.test(passwordInput))
+        {
+             strengthClass = 'strength-weak';
+
+        }
+    } else {
+        passwordLength.textContent = 'Length: 0';
+        progressBar.style.width = '0%';
     }
 
-function getExpressionLength(text){
-          let scorebool = 0;
-            if(haslc.test(text)){
-                    lowercase.style.color = 'red';
-                    scorebool =  scorebool + 1;
-            }
-            if(hasuc.test(text)){
-                    Uppercase.style.color = 'blue';
-                    scorebool =  scorebool + 1;
-            }
-            if(hasSym.test(text)){
-                    Symbols.style.color  = 'orange';
-                    scorebool =  scorebool + 1;
-            }
-            if(hasnumber.test(text)){
-                    Number.style.color   = 'green'
-                    scorebool =  scorebool + 1;
-            }
-    
-        return scorebool;
+    passwordStrength.textContent = 'Strength: ' + strengthClass.split('-')[1].charAt(0).toUpperCase() + strengthClass.split('-')[1].slice(1);
+    passwordStrength.className = strengthClass;
 }
 
-let hasnumber = /\d/;
-let hasuc     = /[A-Z]/;
-let haslc     = /[a-z]/;
-let hasSym    = /[^A-Za-z0-9]/;
-
-
-Inputpassword.addEventListener('input',changeinput);
+checkPasswordStrength();
