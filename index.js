@@ -17,7 +17,7 @@ function stringtyping(){
     lowercase.textContent = maindata;
     trimcase.textContent  = maindata.split(' ').join('');
 
-    camelcase.textContent  =  maindata.split(' ').reduce((a,b) => a+b[0] ?.toUpperCase() + b.substring(1)?.toLowerCase());
+    camelcase.textContent  =  maindata.split(' ').reduce((a,b) => a+b[0] ?  a+b[0].toUpperCase() + b.substring(1)?.toLowerCase() : '');
     
     // Pascal Case - Make first letter capital
     pascalcase.textContent =  camelcase ?  camelcase.textContent[0].toUpperCase() + camelcase.textContent.substring(1) : '';
