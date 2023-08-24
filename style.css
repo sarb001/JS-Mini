@@ -1,24 +1,41 @@
-.carousel_slide{
+.mainimg{
+    width: 50%;
+}
+.carousel_ultrack{
     list-style-type: none;
 }
 .carousel_images-container{
-    background-color: rgb(115, 17, 207);
-    padding: 10px;
-    position: relative;
-}
-.carousel_ultrack{
-    margin: 0px;
-    padding: 0px;
+    /* background-color: red; */
+    width: 70%;
     text-align: center;
 }
-.carousel-container{
-    height: 800px;
-    width: 80%;
+.carousel{
+    background-color: rgb(123, 118, 128);
     position: relative;
-    margin: 0 auto;
+    height: 70vh;
 }
 .carousel_slide{
     position: absolute;
-    top : 0px;
+    top :0px;
     bottom: 0px;
+}
+.carousel_button{
+     position: absolute;
+}
+.left_arrow{
+    top: 200px;
+    left: 350px;
+}
+.right_arrow{
+    right : 310px;
+    top : 200px;
+}
+.carousel__indicator{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: wheat;
+    position: relative;
+     top:440px;
+    left: 550px;
 }
