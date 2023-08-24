@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
     <title> Document </title>
 </head>
  <link href = "style.css  "  rel = "stylesheet" />
@@ -11,18 +11,31 @@
             <div class = "commentbox">
                  <h3> Carousel Here  </h3>
             </div>
-                   <div id = "carousel">
-                       <section class="slider-wrapper">
-                         <button class = "slide-arrow" id = "slide-arrow-prev"> < </button>
-                         <button class = "slide-arrow" id = "slide-arrow-next"> > </button>
-                            <ul class ="slides-container">
-                                    <li class="slide"> </li>
-                                    <li class="slide"> </li>
-                                    <li class="slide"> </li>
-                                    <li class="slide"> </li>
-                            </ul>
-                        </section> 
-                   </div>
+
+    <div class = "carousel-container">
+        <button class="carousel_left_arrow">
+             <img src = "/assests/images/Left-Arrow.svg"   alt = "left-arrow" />
+        </button>
+        
+         <div class="carousel_images-container">
+             <ul class="carousel_ultrack">
+                <li class="carousel_slide">
+                   <img class = "main-img"  src = "/assests/images/dog-1.png"   alt = "dog-1"  /> 
+                </li>
+                <li class="carousel_slide">
+                    <img class = "main-img"  src = "/assests/images/dog-2.png"   alt = "dog-2"  /> 
+                </li>
+                <li class="carousel_slide">
+                    <img class = "main-img"  src = "/assests/images/dog-3.png"   alt = "dog-3"  /> 
+                </li>
+             </ul>
+         </div>  
+         
+         <button class="carousel_right_arrow"> 
+             <img  src = "/assests/images/Right-Arrow.svg"    alt = "right-arrow" />
+         </button>
+   </div>
+
     <script src = "index.js"> </script>
 
 </body>

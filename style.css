@@ -1,0 +1,24 @@
+.carousel_slide{
+    list-style-type: none;
+}
+.carousel_images-container{
+    background-color: rgb(115, 17, 207);
+    padding: 10px;
+    position: relative;
+}
+.carousel_ultrack{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+.carousel-container{
+    height: 800px;
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+}
+.carousel_slide{
+    position: absolute;
+    top : 0px;
+    bottom: 0px;
+}
