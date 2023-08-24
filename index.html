@@ -5,44 +5,34 @@
     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
     <title> Document </title>
 </head>
- <link href = "style.css  "  rel = "stylesheet" />
+ <link href = "style.css"  rel = "stylesheet" />
 
 <body>
             <div class = "commentbox">
                  <h3> Carousel Here  </h3>
             </div>
 
-    <div class = "carousel">
-        <button class="carousel_button left_arrow">
-             <span> < </span>
-        </button>
-        
-         <div class="carousel_images-container">
-             <ul class="carousel_ultrack">
-                <li class="carousel_slide">
-                   <img class = "mainimg"  src = "/assests/images/First.jpg"   alt = "scene-1"   /> 
-                </li>
-                <li class="carousel_slide">
-                    <img class = "mainimg"  src = "/assests/images/second.jpg"   alt = "scene-2"  /> 
-                </li>
-                <li class="carousel_slide">
-                    <img class = "mainimg"  src = "/assests/images/third.jpg"   alt = "scene-3"   /> 
-                </li>
-             </ul>
-         </div>  
-         
-         <button class="carousel_button right_arrow"> 
-            <span> > </span>   
-          </button>
+            <section aria-label="Newest Photos">
 
-          <div class="carousel_bottom">
-            <button class = "carousel__indicator"> </button>
-            <button class = "carousel__indicator"> </button>
-            <button class = "carousel__indicator"> </button>
-          </div>
-
-
-   </div>
+                <div class = "carousel"  data-carousel>
+                    
+                    <button class="carousel_button prev"  data-carousel-button = "prev" >  &#8656 </button>
+                    
+                    <button class="carousel_button next"  data-carousel-button = "next" >  &#8658  </button>
+                    
+                        <ul class="carousel_ultrack" data-slides>
+                            <li class="slide" data-active>
+                            <img class = "mainimg"  src = "/assests/images/First.jpg"   alt = "scene-1"   /> 
+                            </li>
+                            <li class="slide">
+                                <img class = "mainimg"  src = "/assests/images/second.jpg"  alt = "scene-2"  /> 
+                            </li>
+                            <li class="slide">
+                                <img class = "mainimg"  src = "/assests/images/third.jpg"   alt = "scene-3"   /> 
+                            </li>
+                        </ul>
+                </div>
+            </section>
 
     <script src = "index.js"> </script>
 
