@@ -1,22 +1,32 @@
 
-const Applybtn = document.getElementById('apply');
-const InputNumber = document.getElementById('number');
+ const slider = document.querySelector('.slider');
+ const slides = document.querySelectorAll('.slide');
 
-const ProgressBar = document.getElementById('progressbar');
+ const prevBtn = document.querySelector('.prev-slide');
+ const nextBtn = document.querySelector('.next-slide');
 
-function Applybar(){
-     let  width = 0;
+  let slideindex = 0;
+  slides[slideindex].classList.add('active');            // adding or activating manually to first slide 
 
-      const inputValue = InputNumber.value;         // get input value 
+  nextBtn.addEventListener('click' , () => {
+    slides[slideindex].classList.remove('active');       
 
-         if(inputValue >= 0 && inputValue <= 100){
-            ProgressBar.style.width = inputValue + '%';
-            console.log('Width increment ');
-        }else{
-            alert(' Enter  Number between 0 and 100 ');
-            console.log('Invalid Data');
-            inputValue(' ');
-        }
-}
+    // if value inside slideindex is last  then moveback to 0th position else increment it normally 
 
-Applybtn.addEventListener('click',Applybar);
+    slideindex  = (slideindex  === slides.length - 1) ? 0 : slideindex + 1 ;
+    slides[slideindex].classList.add('active'); 
+    slider.style.transform = `translateX(-${slideindex * 100}%)` ;     
+
+  })
+
+  
+  prevBtn.addEventListener('click' , () => {
+    slides[slideindex].classList.remove('active');       
+
+        //check if slidendex = 0 means we are at last slide then move to last array position or arr[2]here 
+        // or move slideindex - 1 
+
+    slideindex  = (slideindex  === 0) ? slides.length - 1 : slideindex - 1 ;
+    slides[slideindex].classList.add('active'); 
+    slider.style.transform = `translateX(-${slideindex * 100}%)` ;     
+  });
