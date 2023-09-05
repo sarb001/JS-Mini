@@ -9,9 +9,18 @@ function Applybar(){
 
       const inputValue = InputNumber.value;         // get input value 
 
-         if(inputValue >= 0 && inputValue <= 100){
+         if(inputValue >= 0 && inputValue <= 30){
             ProgressBar.style.width = inputValue + '%';
-            console.log('Width increment ');
+            ProgressBar.style.backgroundColor = 'red' ;
+            console.log('Width 0 - 30 ');
+        }else if(inputValue >= 30 && inputValue <= 70){
+            ProgressBar.style.width = inputValue + '%';
+            ProgressBar.style.backgroundColor = 'yellow' ;
+            console.log('Width 30 - 70 ');
+        }else if(inputValue >= 70 && inputValue <= 100){
+            ProgressBar.style.width = inputValue + '%';
+            ProgressBar.style.backgroundColor = 'green' ;
+            console.log('Width 70 - 100 ');
         }else{
             alert(' Enter  Number between 0 and 100 ');
             console.log('Invalid Data');
