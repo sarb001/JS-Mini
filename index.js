@@ -1,30 +1,41 @@
-// Get all accordion items
-const accordionItems = document.querySelectorAll('.accordion-item');
 
-// Attach click event listener to each accordion header
 
- accordionItems.forEach((item) => {
-  const accordionHeader = item.querySelector('.accordion-header');
-  const accordionButton = item.querySelector('.accordion-button');
-  const accordionPanel  =  item.querySelector('.accordion-panel');
-  const accordionArrow  =  item.querySelector('.accordion-arrow');
 
-  // Toggle the open class on click
-  accordionHeader.addEventListener('click', () => {
-    const isOpen = accordionPanel.classList.contains('open');
+// var a = 99;
+// console.log('value of a -',a);
+// // answer is - 99 
 
-    // Close all other accordion items
-    accordionItems.forEach((item) => {
-      item.querySelector('.accordion-panel').classList.remove('open');
-      item.querySelector('.accordion-arrow').classList.remove('open');
-    });
 
-    if (!isOpen) {
-      accordionPanel.classList.add('open');
-      accordionArrow.classList.add('open');
-    } else {
-      accordionPanel.classList.remove('open');
-      accordionArrow.classList.remove('open');
-    }
-  });
-});
+// 1) this keyword in  Global Scope 
+// here it refers to Global Object  (this)
+
+// this.a = 1000;
+// console.log('value of a -',this.a);     // 1000;
+
+
+// 2)  this keyword is used inside Function -- 
+
+// this.a = 55;
+// function getparam(){
+//  console.log('inside params - ',this.a);
+// }
+// getparam();   // 55 
+
+// inside function this keyword refers to  parent function or global window object 
+
+
+// 3) inside Object --
+
+// let object = {
+//   name : 'faran',
+//   age : 243,
+//   getdata(){
+//     console.log('inside object -',this.age);
+//   }
+// }
+// object.getdata();   // 23
+
+// inside Object this refers to parent Object not window Object 
+
+
+// 4) Inside Object with Normal Function like 3rd example 
