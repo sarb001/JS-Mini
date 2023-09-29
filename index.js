@@ -1,4 +1,5 @@
 
+ 
  const slider = document.querySelector('.slider');
  const slides = document.querySelectorAll('.slide');
 
@@ -9,16 +10,14 @@
   slides[slideindex].classList.add('active');            // adding or activating manually to first slide 
 
   nextBtn.addEventListener('click' , () => {
-    slides[slideindex].classList.remove('active');       
+    slides[slideindex].classList.remove('active');     // remove where ever class active is present in  whole area 
 
     // if value inside slideindex is last  then moveback to 0th position else increment it normally 
 
     slideindex  = (slideindex  === slides.length - 1) ? 0 : slideindex + 1 ;
     slides[slideindex].classList.add('active'); 
     slider.style.transform = `translateX(-${slideindex * 100}%)` ;     
-
   })
-
   
   prevBtn.addEventListener('click' , () => {
     slides[slideindex].classList.remove('active');       
