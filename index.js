@@ -15,6 +15,7 @@ function decremntbtn(){
 }
 
 function resetbtn(){
+         change.valueAsNumber = 0;
         value.textContent = 0;
 }
 
