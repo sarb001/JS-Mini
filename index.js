@@ -15,8 +15,8 @@ function stringtyping(){
 
     maindata = stringdata.value.trim();     // without trim extra spaces gives Error -- undefined 
     lowercase.textContent = maindata;
-    trimcase.textContent  = maindata.split(' ').join('');
-
+    trimcase.textContent  =   maindata.split(' ').join('');
+    // first small always 
     camelcase.textContent  =  maindata.split(' ').reduce((a,b) => a+b[0] ?  a+b[0].toUpperCase() + b.substring(1)?.toLowerCase() : '');
     
     // Pascal Case - Make first letter capital
