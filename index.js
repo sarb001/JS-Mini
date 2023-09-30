@@ -9,6 +9,7 @@
 // 1) this keyword in  Global Scope 
 // here it refers to Global Object  (this)
 
+
 // this.a = 1000;
 // console.log('value of a -',this.a);     // 1000;
 
@@ -39,7 +40,7 @@
 
 
 //***** */
-//  First clas Function /anonymous function 
+//  First class Function /anonymous function 
 
 
 // FUnction statement or declaration 
@@ -75,29 +76,32 @@
 
 
 //   function a(params){
-//      console.log(' a is used ',params);
-//   }
-//   a(function (){
+//      console.log('Main Function ');
+//      console.log('Main Function params ',params);
+//     }
 
-//   });
+//     a(function (){
+//       console.log(' Passing Function here -',params);
+//    });
 
 
 // callback functions - 
 // we know that we can pass functions into another  function 
-// the function  which is passed into function as argumentis called callback function 
+
+// **  the function  which is passed into function as argument is called callback function 
 
 //in above Example as well function passed (anonymous fn) inside a() is called Callback Function
 
 
 // Detailed example is here -- 
 
-     function ab(paramsbc){
-        console.log('ab is here ');
-        paramsbc();
-    }  
-    ab(function bc(){
-        console.log('bc is here ');
-    })
+    //  function ab(paramsbc){
+    //     console.log('ab is here ');
+    //     paramsbc();
+    // }  
+    // ab(function bc(){
+    //     console.log('bc is here ');
+    // })
 
 
 //  In this bc is callback  function passed in ab function 
